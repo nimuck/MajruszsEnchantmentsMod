@@ -1,0 +1,1 @@
+- added German translation (thanks to @squadactal)
