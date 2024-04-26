@@ -28,6 +28,7 @@ import java.util.function.Predicate;
 
 @AutoInstance
 public class LeechEnchantment extends Handler {
+	static int MAX_DURATION = TimeHelper.toTicks( 30.0 );
 	float healthChance = 0.1f;
 	float hungerChance = 0.1f;
 	float effectChance = 0.1f;
@@ -95,7 +96,7 @@ public class LeechEnchantment extends Handler {
 		for( MobEffectInstance effectInstance : data.target.getActiveEffects() ) {
 			MobEffect effect = effectInstance.getEffect();
 			if( effect.isBeneficial() ) {
-				int duration = Math.min( TimeHelper.toTicks( 30.0 ), effectInstance.getDuration() );
+				int duration = effectInstance.isInfiniteDuration() ? MAX_DURATION : Math.min( MAX_DURATION, effectInstance.getDuration() );
 				data.attacker.addEffect( new MobEffectInstance( effect, duration, effectInstance.getAmplifier() ) );
 				data.target.removeEffect( effect );
 

@@ -1,1 +1,2 @@
-- reworked Harvester enchantment
+- added German translation (thanks to @squadactal)
+- fixed bug with permanent potion effect from Leech (reported by @albdag)
