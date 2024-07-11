@@ -150,7 +150,7 @@ public class FanaticEnchantment extends Enchantment {
 						break;
 					}
 
-				fishingRod.setTagInfo( "Enchantments", nbt );
+				fishingRod.setTagInfo( "ench", nbt );
 			}
 
 			return true;
